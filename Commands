@@ -1,0 +1,43 @@
+Move Command-
+--------------
+mov r0,#1
+mov r7,#1
+swi 0
+
+Logic Operations-
+-----------------
+mov r0,#10
+lsl r0,#1
+lsr r0,#1
+mov r1,r0,lsl #1
+ror r1,#1
+
+
+To create a list-
+------------------
+.data
+ list:
+    .word 1,2,3,4,5
+
+
+Load into Registers-
+---------------------
+ldr r0, =list
+ldr r1,[r0] // [r0,#12]
+
+
+Branch-
+-------
+mov r0,#1
+mov r1,#2
+cmp r1,r0
+
+bgt greater
+bal default
+
+greater:
+  mov r2,#1
+defaut:
+  mov r2,#2
+
+
